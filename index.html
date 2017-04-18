@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>beforeRouteEnter钩子函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">beforeRouteEnter (to, from, next) &#123;</div><div class="line">  this.$http.get(url).then((res) =&gt; &#123;</div><div class="line">    // 此时vue的实例没有生成，如果要进行数据的绑定，必须在next函数中执行</div><div class="line">    next(vm =&gt; &#123;</div><div class="line">      res = res.data</div><div class="line">      if (res &amp;&amp; res.code === '200) &#123;</div><div class="line">        vm.list = res.data</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>beforeRouteEnter钩子函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import Vue from 'vue'</div><div class="line">beforeRouteEnter (to, from, next) &#123;</div><div class="line">  // 此时vue的实例没有生成，所以不能使用this</div><div class="line">  Vue.$http.get(url).then((res) =&gt; &#123;</div><div class="line">    next(vm =&gt; &#123;</div><div class="line">      res = res.data</div><div class="line">      if (res &amp;&amp; res.code === '200) &#123;</div><div class="line">        vm.list = res.data</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj1mwhtao00018wgpn06vkqxy" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj1mwlchu00015ogpphqg3g4g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/17/hello-world/" data-id="cj1mwhta400008wgpat5js3d6" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/17/hello-world/" data-id="cj1mwlche00005ogpnyxb7j1e" class="article-share-link">Share</a>
       
       
     </footer>

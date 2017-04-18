@@ -5,17 +5,17 @@
   
   <title>vue路由钩子函数 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="beforeRouteEnter钩子函数1234567891011beforeRouteEnter (to, from, next) &amp;#123;  this.$http.get(url).then((res) =&amp;gt; &amp;#123;    // 此时vue的实例没有生成，如果要进行数据的绑定，必须在next函数中执行    next(vm =&amp;gt; &amp;#123;      res = res">
+  <meta name="description" content="beforeRouteEnter钩子函数123456789101112import Vue from &apos;vue&apos;beforeRouteEnter (to, from, next) &amp;#123;  // 此时vue的实例没有生成，所以不能使用this  Vue.$http.get(url).then((res) =&amp;gt; &amp;#123;    next(vm =&amp;gt; &amp;#123;      re">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue路由钩子函数">
 <meta property="og:url" content="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="beforeRouteEnter钩子函数1234567891011beforeRouteEnter (to, from, next) &amp;#123;  this.$http.get(url).then((res) =&amp;gt; &amp;#123;    // 此时vue的实例没有生成，如果要进行数据的绑定，必须在next函数中执行    next(vm =&amp;gt; &amp;#123;      res = res">
-<meta property="og:updated_time" content="2017-04-18T01:58:38.000Z">
+<meta property="og:description" content="beforeRouteEnter钩子函数123456789101112import Vue from &apos;vue&apos;beforeRouteEnter (to, from, next) &amp;#123;  // 此时vue的实例没有生成，所以不能使用this  Vue.$http.get(url).then((res) =&amp;gt; &amp;#123;    next(vm =&amp;gt; &amp;#123;      re">
+<meta property="og:updated_time" content="2017-04-18T02:01:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue路由钩子函数">
-<meta name="twitter:description" content="beforeRouteEnter钩子函数1234567891011beforeRouteEnter (to, from, next) &amp;#123;  this.$http.get(url).then((res) =&amp;gt; &amp;#123;    // 此时vue的实例没有生成，如果要进行数据的绑定，必须在next函数中执行    next(vm =&amp;gt; &amp;#123;      res = res">
+<meta name="twitter:description" content="beforeRouteEnter钩子函数123456789101112import Vue from &apos;vue&apos;beforeRouteEnter (to, from, next) &amp;#123;  // 此时vue的实例没有生成，所以不能使用this  Vue.$http.get(url).then((res) =&amp;gt; &amp;#123;    next(vm =&amp;gt; &amp;#123;      re">
   
     <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>beforeRouteEnter钩子函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">beforeRouteEnter (to, from, next) &#123;</div><div class="line">  this.$http.get(url).then((res) =&gt; &#123;</div><div class="line">    // 此时vue的实例没有生成，如果要进行数据的绑定，必须在next函数中执行</div><div class="line">    next(vm =&gt; &#123;</div><div class="line">      res = res.data</div><div class="line">      if (res &amp;&amp; res.code === '200) &#123;</div><div class="line">        vm.list = res.data</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>beforeRouteEnter钩子函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import Vue from 'vue'</div><div class="line">beforeRouteEnter (to, from, next) &#123;</div><div class="line">  // 此时vue的实例没有生成，所以不能使用this</div><div class="line">  Vue.$http.get(url).then((res) =&gt; &#123;</div><div class="line">    next(vm =&gt; &#123;</div><div class="line">      res = res.data</div><div class="line">      if (res &amp;&amp; res.code === '200) &#123;</div><div class="line">        vm.list = res.data</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj1mwhtao00018wgpn06vkqxy" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj1mwlchu00015ogpphqg3g4g" class="article-share-link">Share</a>
       
       
     </footer>
