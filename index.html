@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/18/vue路由钩子函数/">vue路由钩子函数</a>
+      <a class="article-title" href="/2017/04/18/vue路由钩子函数/">vue路由导航钩子函数</a>
     </h1>
   
 
@@ -86,13 +86,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>beforeRouteEnter钩子函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import Vue from 'vue'</div><div class="line">beforeRouteEnter (to, from, next) &#123;</div><div class="line">  // 此时即将登场的组件还没有被创建，所以不能使用this,</div><div class="line">  // 但是可以传一个回调给next来访问组件实例</div><div class="line">  //（如果一个页面的数据是后台请求的，就可以用这个函数提高用户体验，防止用户一直白屏）</div><div class="line">  Vue.$http.get(url).then((res) =&gt; &#123;</div><div class="line">    next(vm =&gt; &#123;</div><div class="line">      res = res.data</div><div class="line">      if (res &amp;&amp; res.code === '200) &#123;</div><div class="line">        vm.list = res.data</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>beforeRouteLeave钩子函数,<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">beforeRouteLeave (to, <span class="keyword">from</span>, next) &#123;</div><div class="line">  <span class="comment">// 可以访问this,这个钩子通常用来禁止用户在还未保存修改前突然离开。可以通过 next(false) 来取消导航。</span></div><div class="line">  <span class="comment">// 如果要实现返回一个页面还在原来浏览的位置，可以用这个钩子实现</span></div><div class="line">  <span class="keyword">let</span> position = <span class="built_in">window</span>.scrollY()</div><div class="line">  <span class="keyword">this</span>.$store.commit(<span class="string">'SAVE_POSITION'</span>, position) <span class="comment">// 离开时将滚动的距离存入vuex</span></div><div class="line">&#125;,</div><div class="line">mounted () &#123;</div><div class="line">  <span class="keyword">this</span>.$nextTick( <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> savedPosition = <span class="keyword">this</span>.$store.state.savedPosition</div><div class="line">    <span class="built_in">window</span>.scroll(<span class="number">0</span>, savedPosition) <span class="comment">// 进入页面时获取vuex中的滚动距离,前提是必须保证页面已经渲染完成</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>beforeRouteEnter<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import Vue from 'vue'</div><div class="line">beforeRouteEnter (to, from, next) &#123;</div><div class="line">  // 此时即将登场的组件还没有被创建，所以不能使用this,</div><div class="line">  // 但是可以传一个回调给next来访问组件实例</div><div class="line">  //（如果一个页面的数据是后台请求的，就可以用这个函数提高用户体验，防止用户一直白屏）</div><div class="line">  Vue.$http.get(url).then((res) =&gt; &#123;</div><div class="line">    next(vm =&gt; &#123;</div><div class="line">      res = res.data</div><div class="line">      if (res &amp;&amp; res.code === '200) &#123;</div><div class="line">        vm.list = res.data</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>beforeRouteLeave<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">beforeRouteLeave (to, <span class="keyword">from</span>, next) &#123;</div><div class="line">  <span class="comment">// 导航离开该组件时调用</span></div><div class="line">  <span class="comment">// 可以访问this,这个钩子通常用来禁止用户在还未保存修改前突然离开。可以通过 next(false) 来取消导航。</span></div><div class="line">  <span class="comment">// 如果要实现返回一个页面还在原来浏览的位置，可以用这个钩子实现</span></div><div class="line">  <span class="keyword">let</span> position = <span class="built_in">window</span>.scrollY()</div><div class="line">  <span class="keyword">this</span>.$store.commit(<span class="string">'SAVE_POSITION'</span>, position) <span class="comment">// 离开时将滚动的距离存入vuex</span></div><div class="line">&#125;,</div><div class="line">mounted () &#123;</div><div class="line">  <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> savedPosition = <span class="keyword">this</span>.$store.state.savedPosition</div><div class="line">    <span class="built_in">window</span>.scroll(<span class="number">0</span>, savedPosition) <span class="comment">// 进入页面时获取vuex中的滚动距离,因为scroll方法必须保证有滚动条，所以放入this.$nextTick()中去执行window.scroll()方法，不然可能会没有效果</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>beforeRouteUpdate<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">beforeRouteUpdate (to, <span class="keyword">from</span>, next) &#123;</div><div class="line">  <span class="comment">// 2.2新增的方法，目前没有使用过，可以访问this</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj1mxcw4w0000hggpov9zkvqo" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj1mxrep60001vcgpb07fz3zq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/17/hello-world/" data-id="cj1mxcw4w0001hggp68t8eayj" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/17/hello-world/" data-id="cj1mxrep60000vcgp3k6r42n4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +178,7 @@
       <ul>
         
           <li>
-            <a href="/2017/04/18/vue路由钩子函数/">vue路由钩子函数</a>
+            <a href="/2017/04/18/vue路由钩子函数/">vue路由导航钩子函数</a>
           </li>
         
           <li>
