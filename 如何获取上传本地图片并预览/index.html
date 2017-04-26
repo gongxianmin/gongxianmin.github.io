@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何获取上传本地图片并预览 | 随便写写</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近无聊就了解了一下如何上传本地图片并预览先简单写下html代码和样式代码123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;input type=&quot;file&quot; name=&quot;file&quot; class=&quot;upload&quot; onchange=&quot;PreviewImage(this)&quot; id=&quot;uploa">
+<meta property="og:type" content="website">
+<meta property="og:title" content="如何获取上传本地图片并预览">
+<meta property="og:url" content="https://gongxianmin.github.io/如何获取上传本地图片并预览/index.html">
+<meta property="og:site_name" content="随便写写">
+<meta property="og:description" content="最近无聊就了解了一下如何上传本地图片并预览先简单写下html代码和样式代码123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;input type=&quot;file&quot; name=&quot;file&quot; class=&quot;upload&quot; onchange=&quot;PreviewImage(this)&quot; id=&quot;uploa">
+<meta property="og:updated_time" content="2017-04-26T14:58:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何获取上传本地图片并预览">
+<meta name="twitter:description" content="最近无聊就了解了一下如何上传本地图片并预览先简单写下html代码和样式代码123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;input type=&quot;file&quot; name=&quot;file&quot; class=&quot;upload&quot; onchange=&quot;PreviewImage(this)&quot; id=&quot;uploa">
+  
+    <link rel="alternate" href="/atom.xml" title="随便写写" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">随便写写</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://gongxianmin.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/如何获取上传本地图片并预览/index.html" class="article-date">
+  <time datetime="2017-04-26T09:47:06.000Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何获取上传本地图片并预览
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近无聊就了解了一下如何上传本地图片并预览<br>先简单写下html代码和样式代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;input type="file" name="file" class="upload" onchange="PreviewImage(this)" id="upload" accept="image/*"/&gt;</div><div class="line">&lt;button type="button" onclick="preview()" class="btn"&gt;预览&lt;/button&gt;</div><div class="line">&lt;div class="box" onclick="hide()"&gt;</div><div class="line">  &lt;div id="imgPreview" class="preview"&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">.upload&#123;</div><div class="line">  display: block;</div><div class="line">  height: 20px;</div><div class="line">  width: 200px;</div><div class="line">  margin: 0 auto;</div><div class="line">&#125;</div><div class="line">.btn&#123;</div><div class="line">  text-align: center;</div><div class="line">  padding: 5px 5px;</div><div class="line">  border: none;</div><div class="line">  border-radius: 5px;</div><div class="line">  display: block;</div><div class="line">  margin: 5px auto;</div><div class="line">  background-color: lightskyblue;</div><div class="line">  color: #fff;</div><div class="line">  font-size: 16px;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">  position: fixed;</div><div class="line">  top: 0;</div><div class="line">  left: 0;</div><div class="line">  width: 100%;</div><div class="line">  height: 100%;</div><div class="line">  background-color: #ccc;</div><div class="line">  display: none;</div><div class="line">&#125;</div><div class="line">.preview&#123;</div><div class="line">  position: absolute;</div><div class="line">  top: 0;</div><div class="line">  left: 0;</div><div class="line">  bottom: 0;</div><div class="line">  right: 0;</div><div class="line">  width: 200px;</div><div class="line">  height: 200px;</div><div class="line">  margin:auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面是js代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="string">''</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">PreviewImage</span>(<span class="params">imgFile</span>)</span>&#123;</div><div class="line">  <span class="comment">// document.getElementById('upload').value = imgFile.value</span></div><div class="line">  file = imgFile.files[<span class="number">0</span>]</div><div class="line">  <span class="keyword">var</span> fr = <span class="keyword">new</span> FileReader</div><div class="line">  fr.readAsDataURL(file)</div><div class="line">  fr.onloadend = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(e.target)</div><div class="line">    path = e.target.result</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hide</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">document</span>.getElementsByClassName(<span class="string">'box'</span>)[<span class="number">0</span>].style.display = <span class="string">"none"</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">preview</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// path = document.getElementById("upload").value</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">"upload"</span>).value)</div><div class="line">  <span class="keyword">if</span> (!path) &#123;</div><div class="line">    alert(<span class="string">'您未选择任何图片'</span>)</div><div class="line">    <span class="keyword">return</span></div><div class="line">  &#125;</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"imgPreview"</span>).innerHTML = <span class="string">"&lt;img width='200px' height='200px' src='"</span> + path + <span class="string">"'/&gt;"</span></div><div class="line">  <span class="built_in">document</span>.getElementsByClassName(<span class="string">'box'</span>)[<span class="number">0</span>].style.display = <span class="string">"block"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>目前并没有在低版本浏览器下测试运行结果</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://gongxianmin.github.io/如何获取上传本地图片并预览/index.html" data-id="cj1z3vqid0000g0gpzwttxwyh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/18/vue路由钩子函数/">vue路由导航钩子函数</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 gongxianmin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
