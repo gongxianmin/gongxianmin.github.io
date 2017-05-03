@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 每天学习一点点</title>
+  <title>数组的去重 | 每天学习一点点</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="利用数组的indexOf方法实现去重12345678var arr = [1, 2, &amp;apos;2&amp;apos;, &amp;apos;3&amp;apos;, null, null, NaN, NaN, 5]var newArr = []for (let i = 0; i &amp;lt; arr.length; i ++) &amp;#123;	if (newArr.indexOf(arr[i]) === -1) &amp;#123">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://gongxianmin.github.io/2017/04/17/hello-world/index.html">
+<meta property="og:title" content="数组的去重">
+<meta property="og:url" content="https://gongxianmin.github.io/2017/05/03/数组的去重/index.html">
 <meta property="og:site_name" content="每天学习一点点">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-19T01:56:47.000Z">
+<meta property="og:description" content="利用数组的indexOf方法实现去重12345678var arr = [1, 2, &amp;apos;2&amp;apos;, &amp;apos;3&amp;apos;, null, null, NaN, NaN, 5]var newArr = []for (let i = 0; i &amp;lt; arr.length; i ++) &amp;#123;	if (newArr.indexOf(arr[i]) === -1) &amp;#123">
+<meta property="og:updated_time" content="2017-05-03T13:53:48.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="数组的去重">
+<meta name="twitter:description" content="利用数组的indexOf方法实现去重12345678var arr = [1, 2, &amp;apos;2&amp;apos;, &amp;apos;3&amp;apos;, null, null, NaN, NaN, 5]var newArr = []for (let i = 0; i &amp;lt; arr.length; i ++) &amp;#123;	if (newArr.indexOf(arr[i]) === -1) &amp;#123">
   
     <link rel="alternate" href="/atom.xml" title="每天学习一点点" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-数组的去重" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/17/hello-world/" class="article-date">
-  <time datetime="2017-04-17T09:31:27.346Z" itemprop="datePublished">2017-04-17</time>
+    <a href="/2017/05/03/数组的去重/" class="article-date">
+  <time datetime="2017-05-03T13:31:48.000Z" itemprop="datePublished">2017-05-03</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      数组的去重
     </h1>
   
 
@@ -86,20 +86,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>利用数组的indexOf方法实现去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, &apos;2&apos;, &apos;3&apos;, null, null, NaN, NaN, 5]</div><div class="line">var newArr = []</div><div class="line">for (let i = 0; i &lt; arr.length; i ++) &#123;</div><div class="line">	if (newArr.indexOf(arr[i]) === -1) &#123;</div><div class="line">		newArr.push(arr[i])</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">console.log(newArr) // [1, 2, &quot;2&quot;, &quot;3&quot;, null, NaN, NaN, 5]</div></pre></td></tr></table></figure></p>
+<p>利用es6的set进行去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr1 = [1, 2, &apos;2&apos;, &apos;3&apos;, null, null, NaN, NaN, 5]</div><div class="line">var newArr1 = []</div><div class="line">newArr1 = [...new Set(arr1)]</div><div class="line">console.log(newArr1) // [1, 2, &quot;2&quot;, &quot;3&quot;, null, NaN, 5]</div></pre></td></tr></table></figure></p>
+<p>对比两种方法可以发现es6的方法更简单直接，同时es6严格意义上<code>NaN === NaN</code>，<br>而es5不是，所以导致了两种去重结果的差异</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/17/hello-world/" data-id="cj291n9uh0000mggpy6yw83ff" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/05/03/数组的去重/" data-id="cj291n9uw0001mggpubnetxel" class="article-share-link">Share</a>
       
       
     </footer>
@@ -108,11 +102,15 @@
     
 <nav id="article-nav">
   
-  
-    <a href="/2017/04/18/vue路由钩子函数/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">vue路由导航钩子函数</div>
+    <a href="/2017/05/03/如何完成两个数的交换/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          如何完成两个数的交换
+        
+      </div>
     </a>
+  
   
 </nav>
 
