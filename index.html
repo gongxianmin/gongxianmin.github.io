@@ -88,12 +88,14 @@
       
         <p>第一种比较常用，用一个中间变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var a = 1</div><div class="line">var b = 10</div><div class="line">var temp = a</div><div class="line">console.log(&quot;a:&quot; + a) // 1</div><div class="line">console.log(&quot;b:&quot; + b) // 10</div><div class="line">a = b</div><div class="line">b = temp</div><div class="line">console.log(&quot;a:&quot; + a) // 1</div><div class="line">console.log(&quot;b:&quot; + b) // 10</div></pre></td></tr></table></figure></p>
 <p>第二种不用中间变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var c = 1</div><div class="line">var d = 10</div><div class="line">console.log(&apos;c:&apos; + c) // 1</div><div class="line">console.log(&apos;d:&apos; + d) // 10</div><div class="line">c = c + d</div><div class="line">d = c - d</div><div class="line">c = c - d</div><div class="line">console.log(&apos;c:&apos; + c) // 10</div><div class="line">console.log(&apos;d:&apos; + d) // 1</div></pre></td></tr></table></figure></p>
+<p>第二种通过乘除法也可以实现(前提是分母不能为0)或者异或运算<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var c = 1</div><div class="line">var d = 10</div><div class="line">console.log(&apos;c:&apos; + c) // 1</div><div class="line">console.log(&apos;d:&apos; + d) // 10</div><div class="line">c = c * d</div><div class="line">d = c / d</div><div class="line">c = c / d</div><div class="line">console.log(&apos;c:&apos; + c) // 10</div><div class="line">console.log(&apos;d:&apos; + d) // 1</div></pre></td></tr></table></figure></p>
 <p>第三种es6的解构赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var e = 1</div><div class="line">var f = 10</div><div class="line">console.log(&apos;e:&apos; + e) // 1</div><div class="line">console.log(&apos;f:&apos; + f) // 10</div><div class="line">var [e, f] = [f, e]</div><div class="line">console.log(&apos;e:&apos; + e) // 10</div><div class="line">console.log(&apos;f:&apos; + f) // 1</div></pre></td></tr></table></figure></p>
+<p>第一种和第二种方法一个比较大的缺陷是有可能损失精度，<br>第三种方法就比较直观，所以个人推荐第三种方法</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/05/03/如何完成两个数的交换/" data-id="cj290bqq70001gkgpql6elq9x" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/05/03/如何完成两个数的交换/" data-id="cj290m8zi000324gpl5wcyl4k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/26/如何上传本地图片并预览/" data-id="cj290bqqm0003gkgpiu6rny0s" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/26/如何上传本地图片并预览/" data-id="cj290m8zi000224gp3moh9f3w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj290bqpr0000gkgpxpr0cn1q" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/18/vue路由钩子函数/" data-id="cj290m8z3000124gpmj3pamiy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gongxianmin.github.io/2017/04/17/hello-world/" data-id="cj290bqq70002gkgpb13h4f6y" class="article-share-link">Share</a>
+      <a data-url="https://gongxianmin.github.io/2017/04/17/hello-world/" data-id="cj290m8z3000024gpb5bvx5zj" class="article-share-link">Share</a>
       
       
     </footer>
